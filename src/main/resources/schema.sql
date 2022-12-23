@@ -1,0 +1,24 @@
+CREATE TABLE users (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nick VARCHAR NOT NULL,
+    login VARCHAR NOT NULL,
+    password VARCHAR NOT NULL,
+    insert_time TIMESTAMP NOT NULL DEFAULT now(),
+    UNIQUE(nick, login)
+);
+
+CREATE TABLE vehicles (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_id BIGINT NOT NULL REFERENCES users(id),
+    brand VARCHAR NOT NULL,
+    model VARCHAR NOT NULL,
+    insert_time TIMESTAMP NOT NULL
+);
+
+CREATE TABLE insurance_offers (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    vehicle_id BIGINT NOT NULL REFERENCES vehicles(id),
+    insurer VARCHAR NOT NULL,
+    price BIGINT NOT NULL,
+    insert_time TIMESTAMP NOT NULL
+);
