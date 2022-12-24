@@ -7,7 +7,7 @@ public class InsuranceOffer {
     private Integer id;
     private Vehicle vehicle;
     private String insurer;
-    private String price;
+    private Long price;
     private LocalDateTime insertTime;
 
     public Integer getId() {
@@ -34,11 +34,11 @@ public class InsuranceOffer {
         this.insurer = insurer;
     }
 
-    public String getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
