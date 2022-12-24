@@ -12,7 +12,7 @@ CREATE TABLE vehicles (
     user_id BIGINT NOT NULL REFERENCES users(id),
     brand VARCHAR NOT NULL,
     model VARCHAR NOT NULL,
-    insert_time TIMESTAMP NOT NULL
+    insert_time TIMESTAMP NOT NULL DEFAULT now()
 );
 
 CREATE TABLE insurance_offers (
@@ -20,5 +20,5 @@ CREATE TABLE insurance_offers (
     vehicle_id BIGINT NOT NULL REFERENCES vehicles(id),
     insurer VARCHAR NOT NULL,
     price BIGINT NOT NULL,
-    insert_time TIMESTAMP NOT NULL
+    insert_time TIMESTAMP NOT NULL DEFAULT now()
 );
