@@ -5,17 +5,18 @@
   <groupId>com.adviser.insurance</groupId>
   <artifactId>insurance-adviser</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-   <properties>
+
+  <properties>
     <project.java.version>11</project.java.version>
     <maven.compiler.version>3.8.0</maven.compiler.version>
     <maven.surefire.version>2.22.2</maven.surefire.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <postgresql.driver.version>42.2.24</postgresql.driver.version>
+    <exec.mainClass>com.adviser.insurance.Main</exec.mainClass>
   </properties>
 
-  <dependencies> 
-  <dependency>
+  <dependencies>
+    <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>${postgresql.driver.version}</version>
@@ -44,5 +45,5 @@
       </plugin>
     </plugins>
   </build>
-  
+
 </project>
