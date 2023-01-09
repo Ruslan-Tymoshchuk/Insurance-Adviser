@@ -12,11 +12,10 @@ import com.adviser.insurance.util.ConnectionManager;
 
 public class InsuranceOfferDao {
 
-    public static final String GET_INSURANCE_OFFERS_BY_USER_QUERY = "SELECT v.brand, v.model, io.insurer, io.price FROM insurance_offers io "
-            + "LEFT JOIN vehicles v ON v.id = io.vehicle_id "
-            + "LEFT JOIN users us ON us.id = v.user_id "
-            + "WHERE us.nick = ? "
-            + "ORDER BY v.model, io.price";
+    public static final String GET_INSURANCE_OFFERS_BY_USER_QUERY = "SELECT v.brand, v.model, io.insurer, io.price FROM vehicles v "
+            + "LEFT JOIN users u ON u.id = v.user_id "
+            + "LEFT JOIN vehicles_insurance_offers vio ON vio.vehicle_id = v.id "
+            + "LEFT JOIN insurance_offers io ON io.id = vio.insurance_offer_id WHERE u.nick = ?";
     
     private final ConnectionManager connectionManager;
     
